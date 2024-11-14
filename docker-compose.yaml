@@ -1,0 +1,15 @@
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./src:/app/src
+    environment:
+      - ENVIRONMENT
+    restart: unless-stopped
+
+volumes:
+  node_modules:
